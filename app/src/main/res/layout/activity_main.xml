@@ -1,32 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout tools:context=".MainActivity"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txt"
-        android:textSize="30sp" />
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:id="@+id/txt"/>
+
     <Button
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Search"
-        android:onClick="onClick" />
-    <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/list" />
+        android:onClick="onClick"
+        android:text="Search"/>
 
     <ImageView
-
-        android:id="@+id/image"
-        android:onClick="onClick"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/picture"
+        android:onClick="onClick"/>
 
 </LinearLayout>

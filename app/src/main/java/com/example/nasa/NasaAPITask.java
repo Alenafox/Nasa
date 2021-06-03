@@ -28,6 +28,8 @@ public class NasaAPITask extends AsyncTask<Request, Void, Response> {
             String urlString = API_URL + "?" + req.formDataToString();
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            Integer test = connection.getResponseCode();
+            Log.d("TAG", test.toString());
             while (connection.getResponseCode() == 301) {
                 Log.d("mytag", "HTTP code: " + connection.getResponseCode());
                 String location = connection.getHeaderField("Location");
@@ -52,9 +54,6 @@ public class NasaAPITask extends AsyncTask<Request, Void, Response> {
 
     @Override
     protected void onPostExecute(Response response) {
-        activity.displayResult(response.toString());
-
-        PicturesAdapter adapter = new PicturesAdapter(activity, response.hits);
-        activity.list.setAdapter(adapter);
+      activity.displayResult(response);
     }
 }

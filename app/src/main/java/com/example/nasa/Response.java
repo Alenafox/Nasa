@@ -1,12 +1,8 @@
 package com.example.nasa;
 
 public class Response {
-    int total, totalHits;
-    Hit[] hits;
-
-    @Override
-    public String toString() {
-
-        return "totalHits = " + totalHits;
-    }
+    public String hdurl;
+    public String date;
+    public String explanation;
+    public String title;
 }

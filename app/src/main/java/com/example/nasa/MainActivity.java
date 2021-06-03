@@ -3,31 +3,30 @@ package com.example.nasa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
-import okhttp3.Request;
 
 public class MainActivity extends AppCompatActivity {
 
+    Picasso p;
+
     ImageView iv;
-    ListView list;
     TextView txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        iv = findViewById(R.id.image);
-        list = findViewById(R.id.list);
+
+        p  = new Picasso.Builder(getApplicationContext()).build();
+
+        iv = findViewById(R.id.picture);
         txtView = findViewById(R.id.txt);
 
         Calendar c = Calendar.getInstance();
@@ -36,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         txtView.setText("Current Date: "+formattedDate);
     }
 
-    public void displayResult(String text) {
-        Log.d("mytag", text);
+    public void displayResult(Response response) {
+        p.load(response.hdurl).into(iv);
     }
 
     public void onClick(View v) {
