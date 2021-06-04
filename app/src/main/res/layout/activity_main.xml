@@ -19,6 +19,19 @@
         android:onClick="onClick"
         android:text="Search"/>
 
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="15sp"
+        android:id="@+id/title"
+        android:textAppearance="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="15sp"
+        android:id="@+id/description"/>
+
     <ImageView
         android:layout_height="match_parent"
         android:layout_width="match_parent"

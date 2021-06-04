@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Picasso p;
 
     ImageView iv;
-    TextView txtView;
+    TextView txtView, title, description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
         iv = findViewById(R.id.picture);
         txtView = findViewById(R.id.txt);
+        title = findViewById(R.id.title);
+        description = findViewById(R.id.description);
 
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayResult(Response response) {
         p.load(response.hdurl).into(iv);
+        title.setText(response.title);
+        description.setText(response.explanation);
     }
 
     public void onClick(View v) {
